@@ -13,16 +13,6 @@
   margin-bottom: 40px;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .button-start {
   background-color: #ff00a0;
   box-shadow: 2px 2px 20px 1px #ff00a0;
@@ -31,8 +21,8 @@
 }
 
 .grid-img {
-  width: 600px;
-  height: 600px;
+  width: 520px;
+  height: 520px;
   margin: auto;
   display: grid;
   gap: 10px;

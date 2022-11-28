@@ -12,12 +12,18 @@
   -moz-box-shadow: 6px 7px 20px 1px rgba(51, 47, 47, 0.71);
 }
 
-.front-card {
-  width: 120px;
-  height: 120px;
+/* front of the card */
+.card .front {
+  transform: rotateY(90deg);
+  position: absolute;
 }
 
-.back-card {
-  width: 120px;
-  height: 120px;
+.flipped .front {
+  transform: rotateY(0deg);
+}
+
+/* when the cards match */
+
+.match {
+  opacity: 0%;
 }
