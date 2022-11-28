@@ -1,0 +1,23 @@
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  border-radius: 5%;
+  border: 2px solid white;
+  box-shadow: 6px 7px 20px 1px rgba(51, 47, 47, 0.71);
+  -webkit-box-shadow: 6px 7px 20px 1px rgba(51, 47, 47, 0.71);
+  -moz-box-shadow: 6px 7px 20px 1px rgba(51, 47, 47, 0.71);
+}
+
+.front-card {
+  width: 120px;
+  height: 120px;
+}
+
+.back-card {
+  width: 120px;
+  height: 120px;
+}
