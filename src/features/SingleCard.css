@@ -25,5 +25,15 @@
 /* when the cards match */
 
 .match {
-  opacity: 0%;
+  animation: fadeOut ease 2s;
+  /* makes animation permanent */
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
 }
