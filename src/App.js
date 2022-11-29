@@ -7,11 +7,11 @@ function App() {
 
   // Create State for variables of the app
   const [cards, setCards] = useState([]); //start the game with an empty object.
-  const [turns, countTurns] = useState(0)
+  const [turns, countTurns] = useState(0);
   const [cardOne, setCardOne] = useState(null); //Start the game with no card selected. When we click on card one, we need to update this state.
   const [cardTwo, setCardTwo] = useState(null);
 
-  // function to duplicate and suffle the images for the game(this funcion upadates state of setCards)
+  // function to duplicate and shuffle the images for the game(this function updates state of setCards)
   const randomCards = () => {
     const shuffledCards = cardList.concat(cardList)
       .sort(() => Math.random() - 0.5)
