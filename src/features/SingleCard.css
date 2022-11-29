@@ -20,11 +20,16 @@
 
 .flipped .front {
   transform: rotateY(0deg);
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 /* when the cards match */
 
-.match {
+.match .front {
+  transform: rotateY(0deg);
+  animation-delay: 5s;
   animation: fadeOut ease 2s;
   /* makes animation permanent */
   animation-fill-mode: forwards;
@@ -36,4 +41,8 @@
   100% {
     opacity:0;
   }
+}
+
+.match .back {
+  transform: rotateY(90deg);
 }
