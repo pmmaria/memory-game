@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   height: 100%;
+  animation: fadeIn 1s;
   }
 
 h1 {
@@ -22,7 +23,6 @@ h1 {
 
 .App .game-container {
   display: flex;
-  animation: fadeIn 1s;
   text-align: center;
 }
 
