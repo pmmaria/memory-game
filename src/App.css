@@ -1,31 +1,81 @@
+#root {
+  height: 100vh;
+}
 .App {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 0;
+}
+
+.App .app-title {
+  flex: 0 1 80px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--white-color);
+  text-shadow: 3px 3px 3px var(--black-color);
+  font-size: 2rem;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.App .btn-start {
+  flex: 0 1 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.App .game-container {
+  display: flex;
+  flex: 0.9 0 auto;
+  animation: fadeIn 1s;
   text-align: center;
 }
 
-.app-title {
-  background-color: #ff00a0;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  margin-bottom: 40px;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.button-start {
-  background-color: #ff00a0;
-  box-shadow: 2px 2px 20px 1px #ff00a0;
-    -webkit-box-shadow: 2px 2px 20px 1px #ff00a0;
-    -moz-box-shadow: 2px 2px 20px 1px #ff00a0;
+.gameboard {
+  flex: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .grid-img {
-  width: 520px;
-  height: 520px;
-  margin: auto;
   display: grid;
-  gap: 10px;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  height: 470px;
+  width: 470px;
+  animation: fadeIn 1s;
+  background: linear-gradient(to bottom, var(--complementary) 5%, var(--complementary-light) 100%);
+  border-radius: 2rem;
+  box-shadow: 7px 9px 28px -3px rgba(26, 26, 26, 0.7);
+    -webkit-box-shadow: 7px 9px 28px -3px rgba(26, 26, 26, 0.7);
+    -moz-box-shadow: 7px 9px 28px -3px rgba(26, 26, 26, 0.7);
+}
+
+.results-counter {
+  flex: 30%;
+  padding: 20px;
+  text-align: left;
+  margin-left: 40px;
+  font-size: 1.2rem;
 }

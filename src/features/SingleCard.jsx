@@ -1,10 +1,12 @@
 import React from 'react'
 import './SingleCard.css'
 
-const SingleCard = ({ card, handleChoice, flipped, match }) => {
+const SingleCard = ({ card, handleChoice, flipped, match, disabled }) => {
   //inside { } I have the props to connect with App.js
   const handleClick = () => {
-    handleChoice(card)
+    if (!disabled) {
+      handleChoice(card)
+    }
   }
 
   return (
