@@ -37,7 +37,7 @@ function App() {
   //Use effect to handle with side effects.
   // In this case we need to wait until user clicks both cards before comparison.
   useEffect(() => {
-    if (matches !== 2) {
+    if (matches !== 8) {
       if (cardOne && cardTwo) {
         setDisabled(true)
         if (cardOne.src === cardTwo.src) {
