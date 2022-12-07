@@ -64,3 +64,31 @@ h1 {
   margin-left: 40px;
   font-size: 1.2rem;
 }
+
+.popup-container-none {
+  animation: fadeOut 2s;
+  display: none;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.popup-container-win {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

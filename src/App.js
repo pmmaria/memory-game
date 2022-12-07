@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { cardList } from './features/CardList';
 import SingleCard from './features/SingleCard';
 import Buttons from './features/Buttons';
+import Popups from './features/Popups'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
   const [cardOne, setCardOne] = useState(null); //Start the game with no card selected. When we click on card one, we need to update this state.
   const [cardTwo, setCardTwo] = useState(null);
   const [disabled, setDisabled] = useState(null);
+  const [win, setWin] = useState('none')
 
   // function to duplicate and shuffle the images for the game(this function updates state of setCards)
   const randomCards = () => {
@@ -25,33 +27,37 @@ function App() {
     setTurns(0)
     setMatches(0)
     setTimeout(() => setCards(shuffledCards), 200)
+    setTimeout(() => setWin('none'), 700)
   }
 
   //function to handle a choice
   const handleChoice = (card) => {
     cardOne ? setCardTwo(card) : setCardOne(card);
   }
-
   //Use effect to handle with side effects.
   // In this case we need to wait until user clicks both cards before comparison.
   useEffect(() => {
-    if (cardOne && cardTwo) {
-      setDisabled(true)
-      if (cardOne.src === cardTwo.src) {
-        setMatches(prevMatches => prevMatches + 1)
-        setCards(prevCards => {
-          return prevCards.map(card => {
-            if (card.src === cardOne.src) {
-              return { ...card, matched: true }
-            } else {
-              return card
-            }
+    if (matches !== 2) {
+      if (cardOne && cardTwo) {
+        setDisabled(true)
+        if (cardOne.src === cardTwo.src) {
+          setMatches(prevMatches => prevMatches + 1)
+          setCards(prevCards => {
+            return prevCards.map(card => {
+              if (card.src === cardOne.src) {
+                return { ...card, matched: true }
+              } else {
+                return card
+              }
+            })
           })
-        })
-        resetTurn()
-      } else {
-        setTimeout(() => resetTurn(), 700)
+          resetTurn()
+        } else {
+          setTimeout(() => resetTurn(), 700)
+        }
       }
+    } else {
+      setTimeout(() => setWin('win'), 700)
     }
   }, [cardOne, cardTwo])
 
@@ -100,11 +106,13 @@ function App() {
               ))}
           </div>
         </div>
-
         <div className='results-counter'>
           <p>Turns: {turns}</p>
           <p>Matches: {matches}</p>
         </div>
+      </div>
+      <div className={`popup-container-${win}`}>
+        <Popups action={randomCards} />
       </div>
     </div>
 

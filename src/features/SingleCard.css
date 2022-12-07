@@ -37,7 +37,7 @@
 .match .front {
   transform: rotateY(0deg);
   animation: fadeOut ease 1s;
-  animation-delay: 1s;
+  animation-delay: 0.7s;
   /* makes animation permanent */
   animation-fill-mode: forwards;
 }
